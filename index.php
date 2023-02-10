@@ -1,8 +1,6 @@
 <?php
-
-use App\config\Database;
+session_start();
 
 require_once('vendor/autoload.php');
 
 $route = new App\Core\Router();
-$conn = new Database();
