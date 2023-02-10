@@ -20,6 +20,11 @@ class LoginController extends Controller
             $errors = $this->login();
 
             if ($errors == []) {
+                if (isset($_POST['remember'])) {
+                    $email = $_POST['email'];
+                    // time 6 hours
+                    setcookie('c_user', $email, time() + (3600 * 6), "./");
+                }
                 $_SESSION['login'] = $_POST['email'];
                 header('location: ./');
             }

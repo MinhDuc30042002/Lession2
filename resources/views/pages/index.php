@@ -16,7 +16,7 @@
                         <td><?= $user['email'] ?></td>
                         <th scope="row"><?= $user['id'] == 1 ? 'Admin' : 'User' ?></th>
                         <th>
-                            <i class="fa-solid fa-eyes"></i>
+                            <i class="fa fa-camera-retro"></i>
                         </th>
                     </tr>
                 <?php } ?>
@@ -27,7 +27,7 @@
                     <td><?= $data['user']['email'] ?></td>
                     <th scope="row"><?= $data['user']['id'] == 1 ? 'Admin' : 'User' ?></th>
                     <th>
-                        <i class="fa-solid fa-eyes"></i>
+                        <i class="fa fa-camera-retro"></i>
                     </th>
                 </tr>
             <?php } ?>

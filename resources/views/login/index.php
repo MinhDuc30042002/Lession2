@@ -19,7 +19,7 @@
         <?php } ?>
     </div>
     <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <input name="remember" type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">Lưu mật khẩu</label>
     </div>
     <button type="submit" class="btn btn-primary">Đăng nhập</button>
