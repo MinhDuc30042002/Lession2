@@ -16,7 +16,13 @@
                         <td><?= $user['email'] ?></td>
                         <th scope="row"><?= $user['id'] == 1 ? 'Admin' : 'User' ?></th>
                         <th>
-                            <i class="fa fa-camera-retro"></i>
+                            <a href="/lampart/user/<?= $user['id'] ?>">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            </a>
+                            <a href="/lampart/user/<?= $user['id'] ?>">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </a>
+
                         </th>
                     </tr>
                 <?php } ?>
@@ -27,7 +33,15 @@
                     <td><?= $data['user']['email'] ?></td>
                     <th scope="row"><?= $data['user']['id'] == 1 ? 'Admin' : 'User' ?></th>
                     <th>
-                        <i class="fa fa-camera-retro"></i>
+                        <form method="POST">
+                            <a href="/lampart/user/<?= $user['id'] ?>">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            </a>
+                        </form>
+
+                        <a href="/lampart/user/<?= $user['id'] ?>">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </a>
                     </th>
                 </tr>
             <?php } ?>

@@ -4,6 +4,8 @@ namespace App\Core;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UserController;
 
 class Router
 {
@@ -11,6 +13,7 @@ class Router
     protected $routes = [
         '/login' => [LoginController::class, 'index'],
         '/logout' => [LoginController::class, 'logout'],
+        '/register' => [RegisterController::class, 'index'],
         '/' => [HomeController::class, 'index']
     ];
 

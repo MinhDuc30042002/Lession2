@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./">
+            <a class="navbar-brand" href="/lampart">
                 <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
                 Bootstrap
             </a>
@@ -23,11 +23,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./">Trang chủ</a>
+                        <a class="nav-link active" aria-current="page" href="/lampart">Trang chủ</a>
                     </li>
                     <?php if (!isset($_SESSION['login'])) { ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="./login">Đăng nhập</a>
+                            <a class="nav-link" href="/lampart/register">Đăng ký</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/lampart/login">Đăng nhập</a>
                         </li>
                     <?php } ?>
                 </ul>
@@ -43,7 +46,7 @@
                                         Bootstrap
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-dark">
-                                        <li><a class="dropdown-item" href="./logout">Đăng xuất</a></li>
+                                        <li><a class="dropdown-item" href="/lampart/logout">Đăng xuất</a></li>
                                     </ul>
                                 </li>
                             </ul>

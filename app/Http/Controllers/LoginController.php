@@ -21,9 +21,7 @@ class LoginController extends Controller
 
             if ($errors == []) {
                 if (isset($_POST['remember'])) {
-                    $email = $_POST['email'];
-                    // time 6 hours
-                    setcookie('c_user', $email, time() + (3600 * 6), "./");
+                    $this->remember($_POST['email']);
                 }
                 $_SESSION['login'] = $_POST['email'];
                 header('location: ./');
@@ -45,5 +43,13 @@ class LoginController extends Controller
     {
         session_destroy();
         header('location: ./');
+    }
+
+    /**
+     * Set cookie 6 hours checked button
+     */
+    public function remember($email)
+    {
+        return setcookie('c_user', $email, time() + (3600 * 6), "./");
     }
 }

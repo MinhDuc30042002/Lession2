@@ -23,9 +23,10 @@ interface UserInterface
      * Store a new user
      * @param string $email
      * @param string $password
+     * @param string $fullname
      */
 
-    public function store($email, $password);
+    public static function store($fullname, $email, $password);
 
     /**
      * @param string $email
