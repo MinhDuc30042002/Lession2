@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Request\LoginRequest;
+
 class LoginController extends Controller
 {
+
     public function __construct()
     {
         $this->folder = 'login';
@@ -11,21 +14,31 @@ class LoginController extends Controller
 
     public function index()
     {
+        $errors = [];
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            
+            $errors = $this->login();
+
+            if ($errors == []) {
+                $_SESSION['login'] = $_POST['email'];
+                header('location: ./');
+            }
         }
 
-        return $this->render('index');
+        return $this->render('index', $errors);
     }
 
     public function login()
     {
-        if (in_array("", $_POST)) {
-            var_dump($_POST);
-            echo 'B';
-        } else {
-            var_dump($_POST);
-            echo 'C';
-        }
+        $request = new LoginRequest;
+        $validate = $request->validated();
+
+        return $validate;
+    }
+
+    public function logout()
+    {
+        session_destroy();
+        header('location: ./');
     }
 }

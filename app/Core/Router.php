@@ -10,6 +10,7 @@ class Router
     protected $params = [HomeController::class, 'index'];
     protected $routes = [
         '/login' => [LoginController::class, 'index'],
+        '/logout' => [LoginController::class, 'logout'],
         '/' => [HomeController::class, 'index']
     ];
 
